@@ -1,0 +1,20 @@
+{
+  "name": "sikota-express",
+  "version": "1.0.0",
+  "description": "Sikota Build\u001b[1;5D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D-api \u001b[build by express",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon index.js",
+    "build": "nuxt build",
+    "generate": "nuxt generate"
+  },
+  "author": "Malik",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap-vue": "^2.21.1",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "nodemon": "^2.0.6",
+    "nuxt": "^2.14.12"
+  }
+}
