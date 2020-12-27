@@ -11,10 +11,14 @@
   "author": "Malik",
   "license": "ISC",
   "dependencies": {
+    "body-parser": "^1.19.0",
     "bootstrap-vue": "^2.21.1",
+    "cors": "^2.8.5",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
+    "mongoose": "^5.11.8",
     "nodemon": "^2.0.6",
-    "nuxt": "^2.14.12"
+    "nuxt": "^2.14.12",
+    "validator": "^13.5.2"
   }
 }
