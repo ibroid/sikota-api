@@ -1,0 +1,47 @@
+POST http://localhost:5000/api/tabayun/request HTTP/1.1
+Content-Type: application/json
+
+{
+  "id_from_client": "356",
+  "perkara_id": "10127",
+  "nomor_perkara": "436/Pdt.G/2019/PA.JU",
+  "id_pn_asal": "407",
+  "kode_satker_asal": "400622",
+  "pn_asal_text": "PENGADILAN AGAMA JAKARTA UTARA",
+  "id_pn_tujuan": "468",
+  "kode_satker_tujuan": "402587",
+  "pn_tujuan_text": "PENGADILAN AGAMA SUBANG",
+  "tgl_delegasi": "2020-12-25",
+  "id_jenis_delegasi": "",
+  "jenis_delegasi_text": "Panggilan Sidang",
+  "tgl_surat": "2020-12-25",
+  "tgl_pengiriman": null,
+  "nomor_surat": "HK.05/0003/W9-A3/XII/2020",
+  "tgl_sidang": "2020-12-25",
+  "namadokumen": null,
+  "document": null,
+  "document_size": null,
+  "document_mime": null,
+  "tgl_resi": "2020-12-25",
+  "nomor_resi": "123445678",
+  "biaya": "90000.00",
+  "pihak": "Fathan bin Tugiyat",
+  "catatan": "test bro",
+  "status_kirim": "0",
+  "agama_pihak": "Islam",
+  "tempat_lahir_pihak": "Wonosobo",
+  "tanggal_lahir_pihak": "1993-10-25",
+  "pendidikan_pihak": "Sekolah Dasar",
+  "pekerjaan_pihak": "buruh",
+  "alamat_pihak": "Jalan Swasembada Barat XXIII No.26 RT.003 RW.011 Kelurahan Kebon Bawang Kecamatan Tanjung Priok, Kota Jakarta Utara,",
+  "created_at": "2020-12-25 14:45:09",
+  "updated_at": null,
+  "created_by": "admin devel"
+}
+###
+POST http://localhost:5000/api/tabayun/get_request HTTP/1.1
+Content-Type: application/json
+
+{
+  "identity_id" : 468
+}
