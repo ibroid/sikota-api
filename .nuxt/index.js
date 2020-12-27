@@ -12,8 +12,8 @@ import { setContext, getLocation, getRouteData, normalizeError } from './utils'
 
 /* Plugins */
 
-import nuxt_plugin_plugin_730ebb84 from 'nuxt_plugin_plugin_730ebb84' // Source: .\\components\\plugin.js (mode: 'all')
-import nuxt_plugin_bootstrap_0e119090 from 'nuxt_plugin_bootstrap_0e119090' // Source: ..\\plugins\\bootstrap (mode: 'all')
+import nuxt_plugin_plugin_1f8d250b from 'nuxt_plugin_plugin_1f8d250b' // Source: ./components/plugin.js (mode: 'all')
+import nuxt_plugin_bootstrap_0e119090 from 'nuxt_plugin_bootstrap_0e119090' // Source: ../plugins/bootstrap (mode: 'all')
 
 // Component: <ClientOnly>
 Vue.component(ClientOnly.name, ClientOnly)
@@ -173,8 +173,8 @@ async function createApp(ssrContext, config = {}) {
   }
   // Plugin execution
 
-  if (typeof nuxt_plugin_plugin_730ebb84 === 'function') {
-    await nuxt_plugin_plugin_730ebb84(app.context, inject)
+  if (typeof nuxt_plugin_plugin_1f8d250b === 'function') {
+    await nuxt_plugin_plugin_1f8d250b(app.context, inject)
   }
 
   if (typeof nuxt_plugin_bootstrap_0e119090 === 'function') {

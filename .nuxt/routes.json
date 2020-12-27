@@ -2,8 +2,8 @@
   {
     "name": "index",
     "path": "/",
-    "component": "F:\\\\www\\\\sikota-express\\\\pages\\\\index.vue",
+    "component": "/var/www/sikota-api/pages/index.vue",
     "chunkName": "pages/index",
-    "_name": "_66a61e46"
+    "_name": "_0c195b5d"
   }
 ]
