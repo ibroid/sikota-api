@@ -2,13 +2,13 @@ const { loadNuxt, build } = require('nuxt')
 const dotenv = require('dotenv');
 const app = require('express')()
 const bodyParser = require('body-parser');
-const isDev = process.env.ENVIRONMENT !== 'production'
-const port = process.env.PORT || 5000
 const APIrouter = require('./routes/api')
 const database = require('./databases/mongodb')
 const cors = require('cors');
 
 dotenv.config({ path: './config.env' });
+const isDev = process.env.ENVIRONMENT !== 'production'
+const port = process.env.PORT || 5000
 
 async function start() {
   const nuxt = await loadNuxt(isDev ? 'dev' : 'start')

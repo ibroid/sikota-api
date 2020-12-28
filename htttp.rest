@@ -1,4 +1,4 @@
-POST http://localhost:5000/api/tabayun/request HTTP/1.1
+POST http://sikota.online/api/tabayun/request HTTP/1.1
 Content-Type: application/json
 
 {
@@ -39,7 +39,7 @@ Content-Type: application/json
   "created_by": "admin devel"
 }
 ###
-POST http://localhost:5000/api/tabayun/get_request HTTP/1.1
+POST http://sikota.online/api/tabayun/get_request HTTP/1.1
 Content-Type: application/json
 
 {
