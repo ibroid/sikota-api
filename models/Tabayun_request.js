@@ -2,115 +2,123 @@ const mongoose = require('mongoose');
 const validator = require('validator');
 
 const schema = new mongoose.Schema({
-  id_from_client : {
+  pull_status: {
+    type: Boolean,
+    default: false
+  },
+  id_from_client: {
     type: Number,
+    required: true,
   },
   perkara_id: {
     type: Number,
+    required: true,
   },
   nomor_perkara: {
     type: String,
-  } ,
-  id_pn_asal:  {
-    type: Number,
+    required: true
   },
-  kode_satker_asal:  {
+  id_pn_asal: {
     type: Number,
+    required: true,
   },
-  pn_asal_text:  {
+  kode_satker_asal: {
+    type: Number
+  },
+  pn_asal_text: {
     type: String,
+    required: true,
   },
-  id_pn_tujuan:  {
+  id_pn_tujuan: {
     type: Number,
+    required: true,
   },
-  kode_satker_tujuan:  {
+  kode_satker_tujuan: {
     type: Number,
+    required: true,
   },
-  pn_tujuan_text:  {
+  pn_tujuan_text: {
     type: String,
+    required: true,
   },
-  tgl_delegasi:  {
-    type: Date,
-  },
-  id_jenis_delegasi:  {
-    type: Number,
+  tgl_delegasi: {
+    type: String
   },
   jenis_delegasi_text: {
-    type: String,
-  } ,
+    type: String
+  },
+  jenis_perkara_text: {
+    type: String
+  },
   tgl_surat: {
-    type: Date,
-  } ,
+    type: String
+  },
   tgl_pengiriman: {
-    type: Date,
-  } ,
+    type: String
+  },
   nomor_surat: {
-    type: String,
-  } ,
+    type: String
+  },
   tgl_sidang: {
-    type: Date,
-  } ,
-  namadokumen: {
-    type: String,
-  } ,
-  document: {
-    type: String,
-  } ,
-  document_size: {
-    type: String,
-  } ,
-  document_mime: {
-    type: String,
-  } ,
-  tgl_resi: {
-    type: Date,
-  } ,
+    type: String
+  },
   nomor_resi: {
-    type: String,
-  } ,
-  biaya: {
-    type: Number,
-  } ,
+    type: String
+  },
   pihak: {
-    type: String,
-  } ,
-  catatan: {
-    type: String,
-  } ,
-  status_kirim: {
-    type: Boolean,
-  } ,
+    type: String
+  },
+  status_pihak: {
+    type: String
+  },
   agama_pihak: {
-    type: String,
-  } ,
+    type: String
+  },
+  biaya: {
+    type: Number
+  },
+  catatan: {
+    type: String
+  },
   tempat_lahir_pihak: {
-    type: String,
-  } ,
+    type: String
+  },
   tanggal_lahir_pihak: {
-    type: Date,
-  } ,
+    type: String
+  },
   pendidikan_pihak: {
-    type: String,
-  } ,
+    type: String
+  },
   pekerjaan_pihak: {
-    type: String,
-  } ,
+    type: String
+  },
   alamat_pihak: {
-    type: String,
-  } ,
+    type: String
+  },
+  para_pihak: {
+    type: String
+  },
+  tgl_resi: {
+    type: String
+  },
   created_at: {
-    type: Date,
-  } ,
-  updated_at:  {
-    type: Date,
+    type: String
   },
-  created_by:  {
-    type: String,
+  updated_at: {
+    type: String
   },
-  response_status: {
-    type: Boolean,
-    default: false
-  }
+  created_by: {
+    type: String
+  },
+  status_kirim: {
+    type: String
+  },
+  amar_putusan: {
+    type: String
+  },
+  tgl_putusan: {
+    type: String
+  },
 })
 
 const TRmodel = mongoose.model('tabayun_request', schema);

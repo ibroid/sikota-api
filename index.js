@@ -14,30 +14,28 @@ async function start() {
   const nuxt = await loadNuxt(isDev ? 'dev' : 'start')
 
   database._connect
-  app.use(cors())
 
   app.use(bodyParser.json());
   app.use(bodyParser.urlencoded({ extended: true }));
 
-  app.use('/api', APIrouter);
+  app.use('/api', cors(), APIrouter);
 
-  app.get('/', (req, res) => {
-    nuxt.renderRoute('/').then((result) => {
-      res.send(result.html)
-    })
-  })
+  // app.get('/', (req, res) => {
+  //   nuxt.renderRoute('/').then((result) => {
+  //     res.send(result.html)
+  //   })
+  // })
 
-  app.get('/test', (req, res) => {
-    res.send({
-      text: 'Hello Wordl'
-    })
-  })
+  // app.get('/test', (req, res) => {
+  //   res.send({
+  //     text: 'Hello Wordl'
+  //   })
+  // })
 
-  // app.use(routeAPI);
 
-  if (isDev) {
-    build(nuxt)
-  }
+  // if (isDev) {
+  //   build(nuxt)
+  // }
   app.listen(port, () => {
     console.log('SERVER RUNNING ON ' + port)
   })
