@@ -1,40 +1,7 @@
-POST http://sikota.online/api/tabayun/request HTTP/1.1
+
+POST http://sikota.online/api/tabayun/get_request HTTP/1.1
 Content-Type: application/json
 
 {
-  "perkara_id": 7021,
-  "nomor_perkara": "123/Pdt.G/2018/PA.JU",
-  "id_pn_asal": 407,
-  "kode_satker_asal": 400622,
-  "pn_asal_text": "PENGADILAN AGAMA JAKARTA UTARA",
-  "id_pn_tujuan": 468,
-  "kode_satker_tujuan": 402587,
-  "pn_tujuan_text": "PENGADILAN AGAMA SUBANG",
-  "tgl_delegasi": "2020-12-30",
-  "jenis_delegasi_text": "Panggilan Sidang",
-  "jenis_perkara_text": "Cerai Gugat",
-  "tgl_surat": "2020-12-30",
-  "tgl_pengiriman": "2020-12-30",
-  "nomor_surat": "HK.05/0006/W9-A3/XII/2020",
-  "tgl_sidang": "2020-12-30",
-  "nomor_resi": "2647821647",
-  "status_pihak": "Tergugat",
-  "agama_pihak": "Islam",
-  "biaya": 100000,
-  "catatan": "Test Bro",
-  "pihak": "A. Wawan Kurnia Bin Suhara",
-  "tempat_lahir_pihak": "Sumedang",
-  "tanggal_lahir_pihak": "1976-02-14",
-  "pendidikan_pihak": "Sekolah Lanjutan Tingkat Atas",
-  "pekerjaan_pihak": "Karyawan swasta",
-  "alamat_pihak": "dahulu di Jl. Kp. Sukapura RT 001 RW.001 Kelurahan Sukapura Kecamatan Cilincing - Jakarta Utara, dan sekarang sudah tidak diketahui lagi alamat dan keberadaannya dengan jelas baik di wilayah hukum Indonesia maupun di luar wilayah hukum Indonesia (Ghaib)",
-  "para_pihak": "Penggugat:<br />Karijah Binti Yatin<br />Tergugat:<br />A. Wawan Kurnia Bin Suhara",
-  "tgl_resi": "2021-01-03",
-  "created_at": "2020-12-30 22:10:31",
-  "updated_at": "2021-01-03 02:10:26",
-  "created_by": "Web Master",
-  "status_kirim": "0",
-  "amar_putusan": null,
-  "tgl_putusan": null,
-  "id_from_client": 359,
+  "identity_id" : 407
 }

@@ -1,5 +1,6 @@
 const Tabayun_request = require('../models/Tabayun_request');
-const LogRequest = require('../controllers/LogRequest')
+const LogRequest = require('../controllers/LogRequest');
+
 class TabayunRequest {
   constructor() {
 
@@ -7,7 +8,7 @@ class TabayunRequest {
   static reciveData(req, res) {
     if (!req.body) {
       res.status(400).send({
-        status: 400, message: "Request Body is Missing", data: null
+        status: 400, message: "Request Body is Missing", data: null, icon: 'error'
       });
       return false;
     }
@@ -17,11 +18,12 @@ class TabayunRequest {
         status: 200,
         message: "Tabayun Berhasil Di Kirim",
         data: data,
+        icon: 'success',
         info: LogRequest.makeLog(data)
       })
     }).catch((err) => {
       res.status(500).send({
-        status: 500, message: 'Gagal di Kirim : ' + err, data: null
+        status: 500, message: 'Gagal di Kirim : ' + err, data: null, icon: 'error'
       })
     })
   }
@@ -35,21 +37,41 @@ class TabayunRequest {
           res.json({
             status: 404,
             message: 'Data Tidak Ada',
-            data: null
+            data: null,
+            icon: 'error'
           })
         } else {
-          res.json({
-            status: 200,
-            message: "Get Data Success",
-            data: doc
-          })
+          let rows = [];
+          for (let i = 0; i < doc.length; i++) {
+            const element = doc[i];
+            if (element.pull_status == false) {
+              LogRequest.updatePull(element._id)
+              rows.push(element)
+            }
+          }
+          if (rows.length === 0) {
+            res.json({
+              status: 202,
+              message: 'Tidak Ada Data yang Baru',
+              data: rows,
+              icon: 'warning'
+            })
+          } else {
+            res.json({
+              status: 200,
+              message: 'Data Berhasil di Tambahkan',
+              data: rows,
+              icon: 'success'
+            })
+          }
         }
       })
       .catch(err => {
         res.json({
           status: 404,
-          message: err,
-          data: null
+          message: "Terjadi Kesalahan :" + err,
+          data: null,
+          icon: 'error'
         })
       })
   }

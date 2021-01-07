@@ -17,8 +17,8 @@
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "mongoose": "^5.11.8",
-    "nodemon": "^2.0.6",
     "nuxt": "^2.14.12",
     "validator": "^13.5.2"
-  }
+  },
+  "devDependencies": {}
 }

@@ -8,7 +8,7 @@ const cors = require('cors');
 
 dotenv.config({ path: './config.env' });
 const isDev = process.env.ENVIRONMENT !== 'production'
-const port = process.env.PORT || 5000
+const port = 5000
 
 async function start() {
   const nuxt = await loadNuxt(isDev ? 'dev' : 'start')
@@ -20,22 +20,23 @@ async function start() {
 
   app.use('/api', cors(), APIrouter);
 
-  // app.get('/', (req, res) => {
-  //   nuxt.renderRoute('/').then((result) => {
-  //     res.send(result.html)
-  //   })
-  // })
-
-  // app.get('/test', (req, res) => {
-  //   res.send({
-  //     text: 'Hello Wordl'
-  //   })
-  // })
+  app.get('/', (req, res) => {
+    nuxt.renderRoute('/').then((result) => {
+      res.send(result.html)
+    })
+  })
 
 
-  // if (isDev) {
-  //   build(nuxt)
-  // }
+  app.get('/transit', (req, res) => {
+    req.data =
+      nuxt.renderRoute('/transit').then((result) => {
+        res.send(result.html)
+      })
+  })
+
+  if (isDev) {
+    build(nuxt)
+  }
   app.listen(port, () => {
     console.log('SERVER RUNNING ON ' + port)
   })

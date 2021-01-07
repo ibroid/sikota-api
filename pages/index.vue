@@ -2,32 +2,17 @@
   <div class="container">
     <div>
       <Logo />
-      <h1 class="title">
-        sikota-api
-      </h1>
+      <h1 class="title">sikota-api</h1>
       <div>
         <div class="links">
-          <a
-            href="#"
-            class="button--green"
-          >
-            Login
-          </a>
+          <a href="#" class="button--green"> Login </a>
         </div>
       </div>
       <div class="links">
-        <a
-          href="#"
-          rel="noopener noreferrer"
-          class="button--green"
-        >
+        <a href="/transit" rel="noopener noreferrer" class="button--green">
           Delegasi Transit
         </a>
-        <a
-          href="#"
-          rel="noopener noreferrer"
-          class="button--grey"
-        >
+        <a href="#" rel="noopener noreferrer" class="button--grey">
           Developer List
         </a>
       </div>
@@ -35,10 +20,7 @@
   </div>
 </template>
 <script>
-export default {
-  
-  
-}
+export default {};
 </script>
 
 <style scoped>
@@ -52,16 +34,8 @@ export default {
 }
 
 .title {
-  font-family:
-    'Quicksand',
-    'Source Sans Pro',
-    -apple-system,
-    BlinkMacSystemFont,
-    'Segoe UI',
-    Roboto,
-    'Helvetica Neue',
-    Arial,
-    sans-serif;
+  font-family: "Quicksand", "Source Sans Pro", -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   display: block;
   font-weight: 300;
   font-size: 100px;

@@ -1,6 +1,5 @@
-const router = require('express').Router()
-const TabayunRequest = require('../controllers/TabayunRequest')
-
+const router = require('express').Router();
+const TabayunRequest = require('../controllers/TabayunRequest');
 
 router.post('/tabayun/request', TabayunRequest.reciveData)
 router.post('/tabayun/get_request', TabayunRequest.sendData)

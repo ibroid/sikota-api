@@ -1,5 +1,12 @@
 [
   {
+    "name": "transit",
+    "path": "/transit",
+    "component": "/var/www/sikota-api/pages/transit/index.vue",
+    "chunkName": "pages/transit/index",
+    "_name": "_6c898721"
+  },
+  {
     "name": "index",
     "path": "/",
     "component": "/var/www/sikota-api/pages/index.vue",
