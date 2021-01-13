@@ -3,8 +3,9 @@ const Request_file = require('../models/Request_file')
 class Surat {
   constructor() { }
   uploadSuratRequest(req, res) {
-    const allowFormat = ['image/jpeg', 'application/pdf', 'application/rtf', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'];
+    const allowFormat = ['image/jpg', 'image/jpeg', 'application/pdf', 'application/rtf', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'];
     const allowSize = 3410285;
+    console.log(req.files);
     if (allowFormat.indexOf(req.files.doc.mimetype).toString() == '-1') {
       res.status(403).json({
         status: 403,
