@@ -2,10 +2,12 @@ const LogRequest = require('../controllers/LogRequest');
 const Request_file = require('../models/Request_file')
 class Surat {
   constructor() { }
+  allowedFormat(format) {
+    
+  }
   uploadSuratRequest(req, res) {
     const allowFormat = ['image/jpg', 'image/jpeg', 'application/pdf', 'application/rtf', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'];
     const allowSize = 3410285;
-    console.log(req.files);
     if (allowFormat.indexOf(req.files.doc.mimetype).toString() == '-1') {
       res.status(403).json({
         status: 403,
@@ -23,7 +25,7 @@ class Surat {
         if (err) res.status(500).send(err)
         const model = new Request_file({
           file_name: req.files.doc.name,
-          tabayun_request_id: req.body.data
+          tabayun_request_id: req.body.data.replace('"','')
         })
         model.save(model).then(result => {
           res.status(200).json({
@@ -40,6 +42,7 @@ class Surat {
       tabayun_request_id: req.body.tabayun_request_id
     }, (err, data) => {
       if (err) res.status(404).send({ status: 404, message: 'File not Found' });
+
       res.status(202).send({
         status: 200,
         message: 'File Ditemukan',
@@ -47,8 +50,10 @@ class Surat {
       })
     })
   }
+  async uploadSuratResponse(req, res) {
 
-
+    
+  }
 }
 
 module.exports = new Surat()

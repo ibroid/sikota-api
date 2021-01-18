@@ -1,7 +1,7 @@
 
-POST http://sikota.online/api/tabayun/get_request HTTP/1.1
+POST http://sikota.online/api/tabayun/get_file_request HTTP/1.1
 Content-Type: application/json
 
 {
-  "identity_id" : 407
+  "tabayun_request_id" :  "5ffe76822339141cac443972"
 }
