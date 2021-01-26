@@ -31,7 +31,7 @@ class TabayunRequest {
     Tabayun_request
       .find({
         id_pn_tujuan: req.body.identity_id
-      })
+      }).where({ pull_status: false })
       .then(doc => {
         if (doc.length === 0) {
           res.json({
@@ -41,26 +41,24 @@ class TabayunRequest {
             icon: 'error'
           })
         } else {
-          let rows = [];
           for (let i = 0; i < doc.length; i++) {
             const element = doc[i];
             if (element.pull_status == false) {
               LogRequest.updatePull(element._id)
-              rows.push(element)
             }
           }
-          if (rows.length === 0) {
+          if (doc.length === 0) {
             res.json({
               status: 202,
               message: 'Tidak Ada Data yang Baru',
-              data: rows,
+              data: doc,
               icon: 'warning'
             })
           } else {
             res.json({
               status: 200,
               message: 'Data Berhasil di Tambahkan',
-              data: rows,
+              data: doc,
               icon: 'success'
             })
           }

@@ -10,8 +10,8 @@ const schema = new mongoose.Schema({
     type: Date,
     default: Date.now()
   },
-  tabayun_request_id: Object
+  tabayun_response_id: Object
 })
 
-const RFmodel = mongoose.model('request_file', schema);
+const RFmodel = mongoose.model('response_file', schema);
 module.exports = RFmodel;

@@ -12,15 +12,13 @@ class TabayunResponse {
           }
         const model = new Tabayun_response(req.body)
         model.save().then((data) => {
-            res.status(200).json(
-                {
-                    status: 200,
-                    message: "Data Berhasil di Kirim",
-                    data: data,
-                    icon: "success",
-                    info: LogResponse.makeLog(data)
-                }
-            )
+            res.status(200).json({
+                status: 200,
+                message: "Data Berhasil di Kirim",
+                data: data,
+                icon: "success",
+                info: LogResponse.makeLog(data)
+            })
         } ).catch((err) => {
             res.status(500).json({
                 status: 500,
@@ -29,6 +27,22 @@ class TabayunResponse {
             })
         })
 
+    }
+    async sendData(req, res) {
+        const result = await Tabayun_response.find({
+            id_pn_tujuan: req.body.identity_id,
+        }).where({ pull_status : false })
+        result.forEach(element => {
+            if (element.pull_status == false) {
+                LogResponse.updatePull(element);
+            }
+        });
+        res.status(200).send({
+            icon: "success",
+            status: 200,
+            text: "Data Balasan Baru Berhasil ditambahkan",
+            data: result
+        })
     }
 }
 
