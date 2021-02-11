@@ -4,9 +4,7 @@ class PengadilanController {
 
     }
     async get(req, res) {
-        const result = await Pengadilan.find({
-            pt_id: "11"
-        })
+        const result = await Pengadilan.find()
         res.status(200).send({
             status: 200,
             data: result
