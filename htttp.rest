@@ -1,7 +1,2 @@
 
-POST http://sikota.online/api/tabayun/get_file_request HTTP/1.1
-Content-Type: application/json
-
-{
-  "tabayun_request_id" :  "5ffe76822339141cac443972"
-}
+GET http://localhost/api/pengadilan HTTP/1.1
