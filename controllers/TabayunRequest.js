@@ -5,7 +5,7 @@ class TabayunRequest {
   constructor() {
 
   }
-  static async all() {
+  static async all(req, res) {
     const result = await Tabayun_request.find()
     res.status(200).json({
       status: 200,
