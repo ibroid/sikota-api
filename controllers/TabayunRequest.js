@@ -5,6 +5,13 @@ class TabayunRequest {
   constructor() {
 
   }
+  static async all() {
+    const result = await Tabayun_request.find()
+    res.status(200).json({
+      status: 200,
+      data: result
+    })
+  }
   static reciveData(req, res) {
     if (!req.body) {
       res.status(400).send({
@@ -47,21 +54,12 @@ class TabayunRequest {
               LogRequest.updatePull(element._id)
             }
           }
-          if (doc.length === 0) {
-            res.json({
-              status: 202,
-              message: 'Tidak Ada Data yang Baru',
-              data: doc,
-              icon: 'warning'
-            })
-          } else {
-            res.json({
-              status: 200,
-              message: 'Data Berhasil di Tambahkan',
-              data: doc,
-              icon: 'success'
-            })
-          }
+          res.json({
+            status: 200,
+            message: 'Data Berhasil di Tambahkan',
+            data: doc,
+            icon: 'success'
+          })
         }
       })
       .catch(err => {

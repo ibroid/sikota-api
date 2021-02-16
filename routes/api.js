@@ -13,8 +13,10 @@ router.post('/tabayun/response', TabayunResponse.retriveData)
 router.post('/tabayun/upload_file_response', Surat.uploadSuratResponse)
 router.post('/tabayun/get_response', TabayunResponse.sendData);
 router.post('/tabayun/get_file_response', Surat.getSuratResponse)
+
 router.get('/pengadilan', PengadilanController.get)
 router.post('/pengadilan', PengadilanController.insert)
+router.get('/tabayun/request', TabayunRequest.all)
 
 router.get('/test', (req, res) => {
   res.json({
