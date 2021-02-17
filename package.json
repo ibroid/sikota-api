@@ -18,8 +18,6 @@
     "express": "^4.17.1",
     "express-fileupload": "^1.2.0",
     "mongoose": "^5.11.8",
-    "nuxt": "^2.14.12",
     "validator": "^13.5.2"
-  },
-  "devDependencies": {}
+  }
 }
