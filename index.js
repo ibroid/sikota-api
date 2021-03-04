@@ -10,7 +10,7 @@ const cors = require('cors');
 
 dotenv.config({ path: './config.env' });
 const isDev = process.env.ENVIRONMENT !== 'production'
-const port = process.env.PORT || 5000
+const port = process.env.PORT || 8080
 
 async function start() {
   // const nuxt = await loadNuxt(isDev ? 'dev' : 'start')
