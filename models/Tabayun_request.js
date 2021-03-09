@@ -2,6 +2,10 @@ const mongoose = require('mongoose');
 const validator = require('validator');
 
 const schema = new mongoose.Schema({
+  response_status: {
+    type: Boolean,
+    default: false
+  },
   pull_status: {
     type: Boolean,
     default: false
@@ -119,6 +123,10 @@ const schema = new mongoose.Schema({
   tgl_putusan: {
     type: String
   },
+  created : {
+    type: Date,
+    default: Date.now()
+  }
 })
 
 const TRmodel = mongoose.model('tabayun_request', schema);

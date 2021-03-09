@@ -1,4 +1,5 @@
 const Tabayun_request = require('../models/Tabayun_request');
+const Tabayun_response = require('../models/Tabayun_response');
 const LogRequest = require('../controllers/LogRequest');
 
 class TabayunRequest {
@@ -70,6 +71,35 @@ class TabayunRequest {
           icon: 'error'
         })
       })
+  }
+  static async today(req, res) {
+    res.status(200).json({
+      status: 200,
+      data : await Tabayun_request.find({
+        created : {$gte: Date.today()}
+      })
+    })
+  }
+  static async urgent(req, res) {
+    const d = new Date(Date.tomorrow())
+    res.status(200).json({
+      status: 200,
+      data : await Tabayun_request.find({
+        tgl_sidang : {$gte: d.toYMD()}
+      })
+    })
+  }
+  static async detail(req, res) {
+    const data = await Tabayun_request.findById(req.params.id)
+    res.status(200).json({
+      status: 200,
+      data: {
+        delegasi : data,
+        balasan: await Tabayun_response.findOne({
+          id_from_client :  data.id_from_client
+        })
+      }
+    })
   }
 }
 

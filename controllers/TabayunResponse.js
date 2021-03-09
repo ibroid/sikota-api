@@ -1,17 +1,19 @@
 const Tabayun_response = require('../models/Tabayun_response')
+const Log_response = require('../models/Log_response')
 const Surat = require('../controllers/Surat')
 const LogResponse =  require('../controllers/LogResponse')
 class TabayunResponse {
     constructor(){}
     retriveData(req, res) {
         if (!req.body) {
-            res.status(400).send({
-              status: 400, message: "Request Body is Missing", data: null, icon: 'error'
-            });
-            return false;
-          }
+        res.status(400).send({
+            status: 400, message: "Request Body is Missing", data: null, icon: 'error'
+        });
+        return false;
+        }
         const model = new Tabayun_response(req.body)
         model.save().then((data) => {
+            LogResponse.updateResponse(req.body._id)
             res.status(200).json({
                 status: 200,
                 message: "Data Berhasil di Kirim",
@@ -42,6 +44,14 @@ class TabayunResponse {
             status: 200,
             text: "Data Balasan Baru Berhasil ditambahkan",
             data: result
+        })
+    }
+    async today(req, res) {
+        const Log = await  Log_response.findOne({
+            date_added : {$gte: Date.today()}
+        })
+        res.status(200).json({
+            data:  await Tabayun_response.findById(Log.id_tabayun_response)
         })
     }
 }
